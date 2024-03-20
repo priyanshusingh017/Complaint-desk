@@ -1,0 +1,8 @@
+/* styles.css */
+
+.bordered-form {
+    border: 2px solid #000; /* Add a 2px solid black border around the form */
+    padding: 20px; /* Add some padding to the form for spacing */
+    width: 300px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the form horizontally on the page */
+}

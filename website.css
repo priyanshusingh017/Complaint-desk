@@ -1,0 +1,89 @@
+
+.background{
+background: linear-gradient(rgba(232, 244, 247,0.005),#6e95d7),url("images/img2.jpg");
+background-size:cover;
+background-position:center;
+
+height:100vh;
+}
+*{
+    margin:0;
+    padding :0;
+
+}
+.background-heading{
+    padding-top: 55px;
+    
+    margin-bottom:80px;
+    line-height:90px;
+    color:white;
+    text-align:center;
+    
+    font-size: 75px;
+    
+    animation: textTransition 1s ease-out forwards;
+}
+
+@keyframes textTransition {
+    0% {
+        transform: translateY(30px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+.slogan{
+    font-family: 'PT Serif', serif;
+    
+
+    font-size:40px;
+    margin-bottom:10px;
+}
+.about-us-container {
+    text-align: left;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 1s ease forwards;
+}
+
+.about-us-heading {
+    font-size: 35px;
+    margin-bottom: 10px;
+    padding-left:20px;
+    text-align:center;
+}
+.divider {
+    width: 13%; /* Adjust the width as needed */
+    
+    padding-top:10px;
+    margin-bottom:17px;
+    margin-left:680px;/* Center the line horizontally and add margin */
+    border: none;
+    border-top: 3px solid #fff;
+ }
+
+.about-us-paragraph {
+    text-align: center;
+    font-size:25px;
+    font-family: 'PT Serif', serif;
+    margin-left:100px;
+    margin-right:100px;
+    line-height:40px;
+    
+   
+    padding-bottom:20px;
+    
+}
+
+@keyframes fadeInSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
