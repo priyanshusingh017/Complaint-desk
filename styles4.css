@@ -1,0 +1,327 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f5f9; /* Light background color */
+  }
+  
+  .wrapper {
+    background-color: #ffffff;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  form {
+    text-align: center;
+  }
+  
+  h1 {
+    color: #0d0d0e; /* Blue heading color */
+    margin-bottom: 20px;
+  }
+  
+  .input-box {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #2a88c7; /* Blue border */
+    border-radius: 5px;
+    background-color: #f5f8fa; /* Lighter background for input */
+  }
+  
+  .input-box i {
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    color: #3498db; /* Blue icon color */
+  }
+  
+  .password-box {
+    margin-top: 10px;
+  }
+  
+  .btn {
+    background-color: #0cb106;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f5f9; /* Light background color */
+  }
+  
+  .wrapper {
+    background-color: #ffffff;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  form {
+    text-align: center;
+  }
+  
+  h1 {
+    color: #0d0d0e; /* Blue heading color */
+    margin-bottom: 20px;
+  }
+  
+  .input-box {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #2a88c7; /* Blue border */
+    border-radius: 5px;
+    background-color: #f5f8fa; /* Lighter background for input */
+  }
+  
+  .input-box i {
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    color: #3498db; /* Blue icon color */
+  }
+  
+  .password-box {
+    margin-top: 10px;
+  }
+  
+  .btn {
+    background-color: #0cb106;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+  }
+  
+  .remember-forgot {
+    margin-top: 15px;
+    color: #555; /* Gray text color */
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  /* Add some space between the checkbox and the label */
+  .remember-forgot label {
+    display: flex;
+    align-items: center;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f5f9; /* Light background color */
+  }
+  
+  .wrapper {
+    background-color: #ffffff;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  form {
+    text-align: center;
+  }
+  
+  h1 {
+    color: #0d0d0e; /* Blue heading color */
+    margin-bottom: 20px;
+  }
+  
+  .input-box {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #2a88c7; /* Blue border */
+    border-radius: 5px;
+    background-color: #f5f8fa; /* Lighter background for input */
+  }
+  
+  .input-box i {
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    color: #3498db; /* Blue icon color */
+  }
+  
+  .password-box {
+    margin-top: 10px;
+  }
+  
+  .btn {
+    background-color: #0cb106;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+  }
+  
+  .remember-forgot {
+    margin-top: 15px;
+    color: #555; /* Gray text color */
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  /* Add some space between the checkbox and the label */
+  .remember-forgot label {
+    display: flex;
+    align-items: center;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f5f9; /* Light background color */
+  }
+  
+  .wrapper {
+    background-color: #ffffff;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  form {
+    text-align: center;
+  }
+  
+  h1 {
+    color: #0d0d0e; /* Blue heading color */
+    margin-bottom: 20px;
+  }
+  
+  .input-box {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #2a88c7; /* Blue border */
+    border-radius: 5px;
+    background-color: #f5f8fa; /* Lighter background for input */
+  }
+  
+  .input-box i {
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    color: #3498db; /* Blue icon color */
+  }
+  
+  .password-box {
+    margin-top: 10px;
+  }
+  
+  .btn {
+    background-color: #0cb106;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+  }
+  
+  .remember-forgot {
+    margin-top: 15px;
+    color: #555; /* Gray text color */
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  /* Add some space between the checkbox and the label */
+  .remember-forgot label {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  
+  .btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+  }
+  
+  .remember-forgot {
+    margin-top: 15px;
+    color: #555; /* Gray text color */
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  /* Add some space between the checkbox and the label */
+  .remember-forgot label {
+    display: flex;
+    align-items: center;
+  }
