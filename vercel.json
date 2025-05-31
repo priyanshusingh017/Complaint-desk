@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "public/html/index.html",
+      "src": "public/html/*.html",
       "use": "@vercel/static"
     }
   ],
@@ -10,6 +10,10 @@
     {
       "src": "/(.*)",
       "dest": "public/html/index.html"
+    },
+    {
+      "src": "/register",
+      "dest": "public/html/register.html"
     }
   ]
 }
