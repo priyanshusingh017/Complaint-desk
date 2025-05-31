@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIT Bhopal - Complaint Portal</title>
+    <link rel="shortcut icon" href="/public/assets/complainn.jpg" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/public/assets/complainn.jpg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/public/css/styles1.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-university"></i> VIT Bhopal Complaint Portal</h1>
+    </header>
+
+    <main>
+        <section class="card complaint-form">
+            <h2><i class="fas fa-edit"></i> Submit a Complaint</h2>
+            <form id="complaint-form">
+                <div class="form-group">
+                    <label for="category"><i class="fas fa-list"></i> Select Category:</label>
+                    <select id="category" name="category" class="form-control" required>
+                        <option value="">Choose a category...</option>
+                        <option value="Kettle"><i class="fas fa-utensils category-icon"></i>Kettle</option>
+                        <option value="Cleaning">🧹 Cleaning</option>
+                        <option value="Electrical">⚡ Electrical</option>
+                        <option value="Furniture">🪑 Furniture</option>
+                        <option value="Roommate">👥 Roommate</option>
+                        <option value="Mess">🍽️ Mess/Food</option>
+                        <option value="Others">📝 Others</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="block"><i class="fas fa-building"></i> Select Block:</label>
+                    <select id="block" name="block" class="form-control" required>
+                        <option value="">Choose a block...</option>
+                        <option value="Block 1">🏢 Block 1</option>
+                        <option value="Block 2">🏢 Block 2</option>
+                        <option value="Block 3">🏢 Block 3</option>
+                        <option value="Block 4">🏢 Block 4</option>
+                        <option value="Block 5">🏢 Block 5</option>
+                        <option value="Staff Housing">🏠 Staff Housing</option>
+                        <option value="Girls Block 1">🏢 Girls Block 1</option>
+                        <option value="Girls Block 2">🏢 Girls Block 2</option>
+                        <option value="MPH">🏥 MPH</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="room_no"><i class="fas fa-door-open"></i> Room Number:</label>
+                    <input type="text" name="room_no" id="room_no" class="form-control" placeholder="Enter room number" required>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-camera"></i> Upload Media (Optional):</label>
+                    <div class="file-upload-group">
+                        <div class="file-upload" onclick="document.getElementById('complaintImage').click()">
+                            <input type="file" id="complaintImage" accept="image/*" style="display: none;">
+                            <div class="file-upload-content">
+                                <i class="fas fa-image"></i>
+                                <div>Upload Image</div>
+                                <small>JPG, PNG, GIF</small>
+                            </div>
+                        </div>
+                        <div class="file-upload" onclick="document.getElementById('complaintVideo').click()">
+                            <input type="file" id="complaintVideo" accept="video/*" style="display: none;">
+                            <div class="file-upload-content">
+                                <i class="fas fa-video"></i>
+                                <div>Upload Video</div>
+                                <small>MP4, AVI, MOV</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="complaint"><i class="fas fa-comment"></i> Complaint Description:</label>
+                    <textarea id="complaint" name="complaint" class="form-control" placeholder="Please describe your complaint in detail..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    <span class="btn-text">Submit Complaint</span>
+                    <div class="loading"></div>
+                </button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2><i class="fas fa-list-alt"></i> Recent Complaints</h2>
+            <div class="complaint-list" id="complaints-list">
+                <!-- Complaints will be loaded here from Firebase -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><i class="fas fa-copyright"></i> 2024 VIT Bhopal College Complaint Portal</p>
+        <p>Your voice matters. We're here to help!</p>
+    </footer>
+
+    <!-- Success Alert -->
+    <div class="alert" id="successAlert">
+        <i class="fas fa-check-circle"></i> Complaint submitted successfully!
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+        import { 
+            getFirestore, 
+            collection, 
+            addDoc, 
+            getDocs,
+            query,
+            orderBy,
+            limit 
+        } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBNid4uUfi3z7aQYJLg8M501DAgAlzdW6c",
+            authDomain: "complaindesk-ba782.firebaseapp.com",
+            projectId: "complaindesk-ba782",
+            storageBucket: "complaindesk-ba782.appspot.com",
+            messagingSenderId: "1050254281334",
+            appId: "1:1050254281334:web:a714dc34e122345044ed57"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function sendComplaint(category, block, room_no, image, video, complaint) {
+            try {
+                const docRef = await addDoc(collection(db, "complaints"), {
+                    category: category,
+                    block: block,
+                    room_no: room_no,
+                    image: image || '',
+                    video: video || '',
+                    complaint: complaint,
+                    timestamp: new Date().toISOString(),
+                    status: 'pending'
+                });
+                console.log("Document written with ID: ", docRef.id);
+                return true;
+            } catch (e) {
+                console.error("Error adding document: ", e);
+                return false;
+            }
+        }
+
+        // Function to load complaints from Firestore
+        async function loadComplaints() {
+            try {
+                const complaintsList = document.getElementById('complaints-list');
+                complaintsList.innerHTML = '';
+                
+                const q = query(
+                    collection(db, "complaints"),
+                    orderBy("timestamp", "desc"),
+                    limit(10)
+                );
+                
+                const querySnapshot = await getDocs(q);
+                
+                if (querySnapshot.empty) {
+                    complaintsList.innerHTML = '<p>No complaints found.</p>';
+                    return;
+                }
+                
+                querySnapshot.forEach((doc) => {
+                    const complaint = doc.data();
+                    const complaintItem = document.createElement('div');
+                    complaintItem.className = 'complaint-item';
+                    complaintItem.innerHTML = `
+                        <div class="complaint-header">
+                            <span class="complaint-category">${complaint.category}</span>
+                            <span class="complaint-location">${complaint.block}, Room ${complaint.room_no}</span>
+                        </div>
+                        <div class="complaint-description">${complaint.complaint}</div>
+                        ${complaint.image ? `<div class="complaint-media"><i class="fas fa-image"></i> Image attached</div>` : ''}
+                        ${complaint.video ? `<div class="complaint-media"><i class="fas fa-video"></i> Video attached</div>` : ''}
+                        <div class="complaint-status">Status: ${complaint.status}</div>
+                    `;
+                    complaintsList.appendChild(complaintItem);
+                });
+            } catch (error) {
+                console.error("Error loading complaints:", error);
+                document.getElementById('complaints-list').innerHTML = '<p>Error loading complaints. Please refresh.</p>';
+            }
+        }
+
+        // Load complaints when page loads
+        document.addEventListener('DOMContentLoaded', loadComplaints);
+
+        // Form submission handler
+        document.getElementById('complaint-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.querySelector('.submit-btn');
+            const btnText = document.querySelector('.btn-text');
+            const loading = document.querySelector('.loading');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.textContent = 'Submitting...';
+            loading.style.display = 'block';
+            
+            try {
+                const category = document.getElementById('category').value;
+                const block = document.getElementById('block').value;
+                const room_no = document.getElementById('room_no').value;
+                const image = document.getElementById('complaintImage').files[0]?.name || '';
+                const video = document.getElementById('complaintVideo').files[0]?.name || '';
+                const complaint = document.getElementById('complaint').value;
+                
+                const success = await sendComplaint(category, block, room_no, image, video, complaint);
+                
+                if (success) {
+                    document.getElementById('successAlert').style.display = 'flex';
+                    setTimeout(() => {
+                        document.getElementById('successAlert').style.display = 'none';
+                    }, 5000);
+                    
+                    // Reset form
+                    document.getElementById('complaint-form').reset();
+                    
+                    // Reset file upload displays
+                    const fileUploads = document.querySelectorAll('.file-upload-content');
+                    fileUploads.forEach(upload => {
+                        upload.innerHTML = `
+                            <i class="fas fa-image"></i>
+                            <div>Upload Image</div>
+                            <small>JPG, PNG, GIF</small>
+                        `;
+                        upload.parentElement.style.borderColor = '#ddd';
+                    });
+                    
+                    // Refresh complaints list
+                    await loadComplaints();
+                }
+                
+            } catch (error) {
+                console.error('Error submitting complaint:', error);
+                alert('Error submitting complaint. Please try again.');
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                btnText.textContent = 'Submit Complaint';
+                loading.style.display = 'none';
+            }
+        });
+
+        // File upload feedback
+        document.getElementById('complaintImage').addEventListener('change', function(e) {
+            const fileName = e.target.files[0]?.name;
+            const uploadContent = this.parentElement.querySelector('.file-upload-content');
+            if (fileName) {
+                this.parentElement.style.borderColor = '#27ae60';
+                uploadContent.innerHTML = `
+                    <i class="fas fa-check"></i>
+                    <div>Image Selected</div>
+                    <small>${fileName}</small>
+                `;
+            }
+        });
+
+        document.getElementById('complaintVideo').addEventListener('change', function(e) {
+            const fileName = e.target.files[0]?.name;
+            const uploadContent = this.parentElement.querySelector('.file-upload-content');
+            if (fileName) {
+                this.parentElement.style.borderColor = '#27ae60';
+                uploadContent.innerHTML = `
+                    <i class="fas fa-check"></i>
+                    <div>Video Selected</div>
+                    <small>${fileName}</small>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
