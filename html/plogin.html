@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Login</title>
+  <link rel="shortcut icon" href="/assests/complainn.jpg" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/assests/complainn.jpg">
+  <link rel="stylesheet" type="text/css" href="/css/styles4.css">
+</head>
+<body>
+  <div class="login-container">
+    <h1> Login</h1>
+    <p class="subtitle">Enter your mobile number to receive OTP</p>
+    
+    <form id="loginForm">
+      <div class="input-group">
+        <input type="tel" id="mobileNo" placeholder=" " required maxlength="10" pattern="[0-9]{10}">
+        <label for="mobileNo"> Mobile Number</label>
+      </div>
+      
+      <button type="button" class="send-otp-btn" id="sendOtpBtn">Send OTP</button>
+      <div style="clear: both;"></div>
+      
+      <div class="input-group" id="otpGroup" style="display: none;">
+        <div class="otp-container">
+          <input type="number" class="otp-input" maxlength="1" pattern="[0-9]" required>
+          <input type="number" class="otp-input" maxlength="1" pattern="[0-9]" required>
+          <input type="number" class="otp-input" maxlength="1" pattern="[0-9]" required>
+          <input type="number" class="otp-input" maxlength="1" pattern="[0-9]" required>
+          <input type="number" class="otp-input" maxlength="1" pattern="[0-9]" required>
+          <input type="number" class="otp-input" maxlength="1" pattern="[0-9]" required>
+        </div>
+        <div class="timer" id="timer"></div>
+      </div>
+      
+      <div class="remember-forgot">
+        <label>
+          <input type="checkbox" id="rememberMe"> Remember me
+        </label>
+        <a href="#" id="forgotPassword">Forgot password?</a>
+      </div>
+      
+      <div class="btn-container">
+        <button type="submit" id="loginBtn" disabled>Login</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="/js/script4.js"></script>
+</body>
+</html>

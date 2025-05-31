@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration - Student Assistance Hub</title>
+<link rel="stylesheet" type="text/css" href="/css/register.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="heading"> Student Assistance Hub</h1>
+    
+    <div class="registration-card">
+      <form id="registrationForm">
+        <div class="form-group">
+          <label for="name"> Full Name</label>
+          <input type="text" id="name" placeholder="Enter your full name" required>
+          <div class="validation-message" id="nameError"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="registrationNumber"> Registration Number</label>
+          <input type="text" id="registrationNumber" placeholder="Enter registration number" required>
+          <div class="validation-message" id="regError"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="email"> Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+          <div class="validation-message" id="emailError"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="password"> Password</label>
+          <input type="password" id="password" placeholder="Create a strong password" required>
+          <div class="password-strength">
+            <div class="password-strength-bar" id="strengthBar"></div>
+          </div>
+          <div class="validation-message" id="passwordError"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword"> Confirm Password</label>
+          <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+          <div class="password-match" id="passwordMatch"></div>
+          <div class="validation-message" id="confirmError"></div>
+        </div>
+
+        <div class="button-container">
+          <button type="submit" class="register-btn" id="registerBtn">
+             Create Account
+          </button>
+          
+          <div class="login-link">
+            Already have an account?<br>
+            <a href="/html/site.html" id="loginLink">Sign in here</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src = "/js/register.js"></script>
+</body>
+</html>
