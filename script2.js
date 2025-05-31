@@ -32,7 +32,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
           
           // Simulate redirect after successful login
           setTimeout(() => {
-            window.location.href = ('/html/complaint.html'); 
+            window.location.href = ('/complaint.html'); 
             console.log('Redirecting to dashboard...');
           }, 1500);
         } else {

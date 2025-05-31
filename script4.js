@@ -129,7 +129,7 @@
             document.querySelector('.login-container').classList.add('success-animation');
             
             setTimeout(() => {
-              window.location.href = ('/html/complaint.html');
+              window.location.href = ('/complaint.html');
               alert('Welcome! You have successfully logged in.');
             }, 1000);
           } else {

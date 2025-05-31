@@ -26,7 +26,7 @@ function loginUser(registrationNo, password) {
   // Check if credentials match
   if (validCredentials[registrationNo] && validCredentials[registrationNo] === password) {
     // Successful login - redirect to complaint page
-    window.location.href = ("/html/complaint.html");
+    window.location.href = ("/complaint.html");
   } else {
     showError('Invalid Registration No or password. Please try again.');
   }
