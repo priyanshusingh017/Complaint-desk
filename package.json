@@ -1,0 +1,20 @@
+{
+  "name": "complaint-desk",
+  "version": "1.0.0",
+  "description": "The **Student Assistance Hub** is your one-stop digital solution for seamless communication and support within your college community.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priyanshusingh017/Complaint-desk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/priyanshusingh017/Complaint-desk/issues"
+  },
+  "homepage": "https://github.com/priyanshusingh017/Complaint-desk#readme"
+}
