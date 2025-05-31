@@ -163,7 +163,7 @@
             showNotification('🎉 Registration Successful!', 'success');
             
             setTimeout(() => {
-                window.location.href = ("/complaint.html");
+                window.location.href = ("complaint.html");
               alert('Welcome to Student Assistance Hub! Your account has been created successfully.');
               form.reset();
               strengthBar.className = 'password-strength-bar';
@@ -191,7 +191,7 @@
         e.preventDefault();
         showNotification('🔄 Redirecting to login page...', 'info');
         setTimeout(() => {
-          window.location.href = ("/site.html");
+          window.location.href = ("site.html");
         }, 1000);
       });
 
