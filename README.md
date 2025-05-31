@@ -1,6 +1,8 @@
 # Complaint Desk - Web Application
 
-![Complaint Desk Screenshot](screenshot.png)
+<div align="center">
+  <img src="demo2.gif" alt="Demo" width="100%">
+</div>
 
 ## Overview
 
